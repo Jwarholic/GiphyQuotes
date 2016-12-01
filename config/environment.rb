@@ -10,6 +10,12 @@ require 'rubygems'
 
 require 'uri'
 require 'pathname'
+require 'pry'
+require 'net/http'
+require 'uri'
+require 'json'
+require 'httparty'
+
 
 require 'pg'
 require 'bcrypt'

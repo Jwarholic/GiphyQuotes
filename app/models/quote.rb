@@ -1,31 +1,15 @@
-require 'pry'
-require 'net/http'
-require 'uri'
-require 'json'
-
-
 module Quote
-	KEY = ENV['QUOTES']
 
-def self.quote(word)
+	def self.quote(word)
+		uri = URI.parse("http://quotes.rest/quote.json?category=happy")
 
-	uri = URI.parse("http://quotes.rest/quote.json?category=#{word}")
+		request = Net::HTTP::Get.new(uri)
+		request["X-Theysaidso-Api-Secret"] = "F5EKHhzShg1HED9cvzyvTAeF"
 
-	request = Net::HTTP::Get.new(uri)
-	request["X-Theysaidso-Api-Secret"] = KEY
-
-	response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
-	  http.request(request)
-
-	 conversion = JSON.parse(response.body)
-	 #returns the quote
-	 conversion["contents"]["quotes"][0]["quote"]
+		response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
+		  http.request(request)
+		end
 	end
-
-
-
-end
-
 
 end
 
