@@ -16,6 +16,7 @@ function handleTranslateButton(event){
     method: method,
     data: data,
   }).done(function(response){
+    form[0].reset()
   	$('.whole').empty();
     $('.whole').prepend(response);
   })
