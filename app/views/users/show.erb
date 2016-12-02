@@ -1,13 +1,16 @@
-<% if current_user %>
-Hello <%= @user.first_name %>!
+<!-- Button Icon -->
+<i class="center large material-icons" style="margin-left: 45%;">insert_chart</i>
 
-<form method='post' action='/sessions'>
-<input type ='hidden' name='_method' value='delete'>
-  <button type="submit">Logout</button> 
-</form>
 
-	<% else %>
-	<% if @errors %>
-	<%= @errors %>
-	<% end %>
-<% end %>
+
+<!-- Header Previous Results -->
+<div class="row" style="width: 50%; height: 100%; margin-left: 37%;">
+  <div class="col s12 m6">
+    <div class="card yellow darken-2 z-depth-5">
+      <div class="card-content white-text">
+					<p style="text-align: center; color: white; text-size: 25px;"> Previous Results: </p>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
