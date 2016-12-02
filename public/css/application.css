@@ -2,6 +2,12 @@ h1 {
   margin: 0 0 1em 0;
 }
 
+body {
+  background-image: url("http://wallpapercave.com/wp/Q7RdkPa.jpg");
+  background-size: 1920px 1080px;
+  background-repeat: no-repeat;
+}
+
 input {
   display: block;
   width: 100%;
