@@ -1,14 +1,46 @@
 <% if current_user %>
-<a href="/">Home</a>
-<a href="/users/<%= current_user.id %>"><%= current_user.first_name %></a>
-<br>
-<form action='/sessions' method='POST'>
-  <input type='hidden' name='_method' value='DELETE'>
-  <button type='submit'>Logout</button>
-</form>
+ <div class="navbar-fixed">
+  	<nav>
+    <div class="nav-wrapper blue darken-2 z-depth-5">
+        <a href="#" class="brand-logo center">Happy Quotes!</a>
+        <ul id="nav-mobile" class="right">
+          <li><a href="/" style="font-size:12px">Home</a></li>
+        </ul>
+          <ul id="nav-mobile" class="left">
+   			<li><form action='/sessions' method='POST'>
+    		<input type='hidden' name='_method' value='DELETE'>
+    		<button class="right blue darken-3" type='submit'>Logout</button>
+  			</form></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
   <% else %>
-<a href="/">Home</a> 
-<a href="/users/new">Register</a>
-<a href="/sessions/new">Login</a>
+
+
+    <div class="navbar-fixed">
+      <nav>
+      <div class="nav-wrapper blue darken-2 z-depth-5">
+
+        <a href="#" class="brand-logo center">Happy Quotes!</a>
+        <ul id="nav-mobile" class="left">
+          <li><a href="/" style="font-size:13px">Home</a> </li>
+          <li><a href="/users/new" style="font-size:13px">Register</a></li>
+          </ul>
+          <ul id="nav-mobile" class="right">
+          <li><a href="/sessions/new" style="font-size:13px">Login</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+        
+
+
+
 <% end %>
-<a href="/users">users</a> 
+
+
+
+
