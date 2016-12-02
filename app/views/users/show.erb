@@ -14,19 +14,26 @@
   </div>
 </div>
 
-
+<div class="searches">
 
 <% current_user.searches.each do |s| %>
-	<form method="get" action="/searches/<%= s.id %>">
-	<button type="submit" style="background: transparent; border: none; float-left;">
-	<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-	<%= s.word %>
-	Searched on: <%= s.created_at.to_date %>
-	</button>
-	</form>
+
+<article>
+		<form method="get" action="/searches/<%= s.id %>">
+		<button type="submit" style="background: transparent; border: none; float-left;">
+		<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
+		<%= s.word %>
+		Searched on: <%= s.created_at.to_date %>
+		</button>
+		</form>
+		<section id="content">
+		</section>
+</article>
 	 
 	<br>
 	
 	<br>
 	<br>
 <% end %>
+
+</div>
