@@ -30,9 +30,11 @@ end
 
 get '/searches/:id' do
   @search = Search.find(params[:id])
+  @giphy = @search.giphy
+  @quote = @search.quote
 
   if request.xhr?
-    erb :'/searches/_show', layout: false, locals: {search: @search}
+    erb :'/searches/_show', layout: false, locals: {giphy: @giphy, quote: @quote}
   else
     #redirect to individual search page
     redirect "/searches/#{@search.id}"
