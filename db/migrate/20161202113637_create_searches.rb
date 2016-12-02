@@ -1,13 +1,13 @@
 class CreateSearches < ActiveRecord::Migration
 
   def change
-    create_table :users do |t|
+    create_table :searches do |t|
     	t.integer :user_id
-    	t.string :search
-    	t.string :results
+    	t.string :word
+    	t.string :giphy
+    	t.string :quote
       t.timestamps
     end
-    add_index :users, :email, :unique => true
   end
 
 end
