@@ -16,6 +16,7 @@ function handleTranslateButton(event){
     method: method,
     data: data,
   }).done(function(response){
-    $('body').prepend(response);
+  	$('.Hot-Quote').empty();
+    $('.Hot-Quote').prepend(response);
   })
 }

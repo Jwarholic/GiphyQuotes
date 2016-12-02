@@ -1,2 +1,13 @@
-<img src=<%= giphy %> height=400 width=400>
-<p><%= quote %></p>
+<div class="container">
+
+  <main class="mascot">
+    <div class="sign-text-wrap">
+      <div class="sign-text">
+
+      		<% if @giphy %>
+          <img src=<%= @giphy %> width="260", height="158">
+          <% end %>
+      </div>
+    </div>
+  </main>
+</div>
