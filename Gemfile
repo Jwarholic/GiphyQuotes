@@ -16,12 +16,12 @@ gem 'bcrypt-ruby'
 gem 'httparty'
 
 gem 'shotgun'
+gem 'rake', '~> 12.0'
 gem 'kramdown'
 
 group :development, :test do
   gem 'faker'
   gem 'rspec'
-  gem 'rake', '< 11.0'
 
 begin
   require 'rspec/core/rake_task'
