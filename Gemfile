@@ -8,7 +8,6 @@ gem 'sinatra', '~> 1.0'
 gem 'sinatra-contrib'
 gem 'thin'
 gem 'pry'
-gem 'rake', '< 11.0'
 
 gem 'activesupport', "~>4.2"
 gem 'activerecord', "~>4.2"
@@ -22,4 +21,5 @@ gem 'kramdown'
 group :development, :test do
   gem 'faker'
   gem 'rspec'
+  gem 'rake', '< 11.0'
 end
