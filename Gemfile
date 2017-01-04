@@ -22,4 +22,11 @@ group :development, :test do
   gem 'faker'
   gem 'rspec'
   gem 'rake', '< 11.0'
+
+begin
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:spec)
+rescue LoadError
+end
+
 end
