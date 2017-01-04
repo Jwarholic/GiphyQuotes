@@ -1,13 +1,12 @@
 module Quote
 
 	def self.quote(word)
-		uri = URI.parse("http://quotes.rest/quote.json?category=happy")
+		 uri = URI.parse("http://quotes.rest/quote.json?category=happy")
+		 request = Net::HTTP::Get.new(uri)
+		 request["X-Theysaidso-Api-Secret"] = "F5EKHhzShg1HED9cvzyvTAeF"
 
-		request = Net::HTTP::Get.new(uri)
-		request["X-Theysaidso-Api-Secret"] = "F5EKHhzShg1HED9cvzyvTAeF"
-
-		response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
-		  http.request(request)
+		 response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
+		 http.request(request)
 		end
 	end
 

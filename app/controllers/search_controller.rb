@@ -5,7 +5,7 @@ post '/searches/new' do
   @giphy = Giphy.add_giphy(@word)
 
   @quote = JSON.parse(@quote.body)
-  @quote = @quote["contents"]["quote"]
+  # @quote = @quote["contents"]["quote"]
 
   if current_user
     @search = Search.new(user_id: current_user.id,
@@ -17,9 +17,9 @@ post '/searches/new' do
 if request.xhr?
   if @search && @search.save
     @update = "Successfully added to history."
-    erb :'searches/_new', layout: false, locals: {giphy: @giphy, quote: @quote, category: @word, update: @update}
+    erb :'searches/_new', layout: false
   else
-    erb :'searches/_new', layout: false, locals: {giphy: @giphy, quote: @quote, category: @word}
+    erb :'searches/_new', layout: false
   end
   else
     #WOULD REDIRECT TO A SHOW GIPHY PAGE too lazy to make right now.
@@ -34,7 +34,7 @@ get '/searches/:id' do
   @quote = @search.quote
 
   if request.xhr?
-    erb :'/searches/_show', layout: false, locals: {giphy: @giphy, quote: @quote}
+    erb :'/searches/_show', layout: false
   else
     #redirect to individual search page
     redirect "/searches/#{@search.id}"

@@ -21,9 +21,17 @@
 <article>
 		<form method="get" action="/searches/<%= s.id %>">
 		<button type="submit" style="background: transparent; border: none; float-left;">
-		<a class="btn-floating btn-large waves-effect waves-light red"><i class="material-icons">add</i></a>
-		<%= s.word %>
-		Searched on: <%= s.created_at.to_date %>
+		<%if s.id.odd?%>
+			<a class="btn-floating btn-large waves-effect waves-light red">
+			<%else %>
+			<a class="btn-floating btn-large waves-effect waves-light yellow">
+		<% end %>
+		<i class="material-icons z-depth 5">add</i></a>
+		<div class="white-text card-panel teal lighten-2 z-depth 5" style="display:inline-block;">
+			<%= s.word %>
+			<br>
+			Searched on: <%= s.created_at.to_date %>
+		</div>
 		</button>
 		</form>
 		<section id="content">
