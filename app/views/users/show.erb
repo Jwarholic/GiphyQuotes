@@ -1,48 +1,49 @@
-
-<i class="center large material-icons" style="display: inline-block; float:left;">insert_chart</i>
-
-
+<body style="background-color: #7FDBFF; background-image: url()">
+	<i class="center large material-icons" style="display: inline-block; float:left;">insert_chart</i>
 
 
 
-<div class="row">
-  <div class="col s12 m5">
-    <div class="center-align card-panel teal z-depth-5" style="width:50%;">
-      <span class="white-text">
-      Previous Results:
-      </span>
-    </div>
-  </div>
-</div>
 
-<div class="searches">
 
-<% current_user.searches.each do |s| %>
+	<div class="row">
+	  <div class="col s12 m5">
+	    <div class="center-align card-panel teal z-depth-5" style="width:50%;">
+	      <span class="white-text">
+	      Previous Results:
+	      </span>
+	    </div>
+	  </div>
+	</div>
 
-<article>
-		<form method="get" action="/searches/<%= s.id %>">
-		<button type="submit" style="background: transparent; border: none; float-left;">
-		<%if s.id.odd?%>
-			<a class="btn-floating btn-large waves-effect waves-light red">
-			<%else %>
-			<a class="btn-floating btn-large waves-effect waves-light yellow">
-		<% end %>
-		<i class="material-icons z-depth 5">add</i></a>
-		<div class="white-text card-panel teal lighten-2 z-depth 5" style="display:inline-block;">
-			<%= s.word %>
-			<br>
-			Searched on: <%= s.created_at.to_date %>
-		</div>
-		</button>
-		</form>
-		<section id="content">
-		</section>
-</article>
-	 
-	<br>
-	
-	<br>
-	<br>
-<% end %>
+	<div class="searches">
 
-</div>
+	<% current_user.searches.each do |s| %>
+
+	<article>
+			<form method="get" action="/searches/<%= s.id %>">
+			<button type="submit" style="background: transparent; border: none; float-left;">
+			<%if s.id.odd?%>
+				<a class="btn-floating btn-large waves-effect waves-light red">
+				<%else %>
+				<a class="btn-floating btn-large waves-effect waves-light yellow">
+			<% end %>
+			<i class="material-icons z-depth 5">add</i></a>
+			<div class="white-text card-panel teal lighten-2 z-depth 5" style="display:inline-block;">
+				<%= s.word %>
+				<br>
+				Searched on: <%= s.created_at.to_date %>
+			</div>
+			</button>
+			</form>
+			<section id="content">
+			</section>
+	</article>
+		 
+		<br>
+		
+		<br>
+		<br>
+	<% end %>
+
+	</div>
+</body>
