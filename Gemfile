@@ -8,6 +8,8 @@ gem 'sinatra', '~> 1.0'
 gem 'sinatra-contrib'
 gem 'thin'
 gem 'pry'
+gem 'dotenv'
+
 
 gem 'activesupport', "~>4.2"
 gem 'activerecord', "~>4.2"
