@@ -19,6 +19,9 @@ Database Schema
 #### <i class="icon-pencil"></i> Tech Stack
 * Ruby
 * Sinatra
+* Giphy API
+* SaySo Quotes API
+* PostgreSQL (database)
 
 
 ### Live App:
