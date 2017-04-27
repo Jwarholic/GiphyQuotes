@@ -1,7 +1,6 @@
 module Quote
 #Hides API Key
 KEY = ENV['QUOTES']
-p KEY
 	#Quote API
 	def self.quote(word)
 		 uri = URI.parse("http://quotes.rest/quote.json?category=#{word}")
@@ -21,7 +20,7 @@ end
 
 # uri = URI.parse("http://quotes.rest/qod.json?category=management")
 # request = Net::HTTP::Get.new(uri)
-# request["X-Theysaidso-Api-Secret"] = "OZ9h_QF4qQqshrnAlHG_wweF"
+# request["X-Theysaidso-Api-Secret"] = "api key"
 
 # response = Net::HTTP.start(uri.hostname, uri.port, use_ssl: uri.scheme == "https") do |http|
 #   http.request(request)
