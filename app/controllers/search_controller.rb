@@ -23,6 +23,7 @@ post '/searches/new' do
                          word: @word,
                          giphy: @giphy,
                          quote: @quote)
+
   end
 
 
