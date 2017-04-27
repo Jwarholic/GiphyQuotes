@@ -20,10 +20,11 @@ gem 'httparty'
 gem 'shotgun'
 gem 'rake', '~> 12.0'
 gem 'kramdown'
+gem 'rspec'
 
 group :development, :test do
   gem 'faker'
-  gem 'rspec'
+  # gem 'rspec'
 
 begin
   require 'rspec/core/rake_task'
