@@ -13,7 +13,7 @@ Database Schema
 -------------
 
 > 
-> - Picture Here
+> ![](https://github.com/Jwarholic/GiphyQuotes/blob/master/schema.png?raw=true)
 
 
 #### <i class="icon-pencil"></i> Tech Stack
