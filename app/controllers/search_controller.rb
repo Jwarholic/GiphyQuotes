@@ -1,12 +1,23 @@
 post '/searches/new' do
 
+  #The word inputted into the search from the home page
   @word = params[:search][:word]
+
+
+  #Running through the quote Module to retrieve a quote.
   @quote = Quote.quote(@word)
+
+  #Pulls the GIPHY image URL through giphy API method
   @giphy = Giphy.add_giphy(@word)
 
+  #Returns a JSON format through the quotes API
   @quote = JSON.parse(@quote.body)
-  # @quote = @quote["contents"]["quote"]
 
+  #Returns the quote through the JSON API
+  @quote = @quote["contents"]["quote"]
+
+
+  #If a user is logged in it will save the search into the database for later use
   if current_user
     @search = Search.new(user_id: current_user.id,
                          word: @word,
@@ -14,6 +25,8 @@ post '/searches/new' do
                          quote: @quote)
   end
 
+
+  #Checks to see if the form was submitted through AJAX.
 if request.xhr?
   if @search && @search.save
     @update = "Successfully added to history."
@@ -27,6 +40,10 @@ if request.xhr?
 end
 end
 
+
+#Form Through the Users PROFILE page
+#Will find the search and return the giphy and quote back to the page
+#sends back a partial to the page
 
 get '/searches/:id' do
   @search = Search.find(params[:id])
