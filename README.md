@@ -17,6 +17,8 @@ Database Schema
 
 
 #### <i class="icon-pencil"></i> Tech Stack
+* Ruby
+* Sinatra
 
 
 ### Live App:
