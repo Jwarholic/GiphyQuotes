@@ -21,7 +21,7 @@ Database Schema
 * Sinatra
 * Giphy API
 * SaySo Quotes API
-* PostgreSQL (database)
+* PostgreSQL database
 
 
 ### Live App:
