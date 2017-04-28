@@ -26,4 +26,4 @@ Database Schema
 
 ### Live App:
 
- * [GiphyQuotes](giphyquotes.herokuap.com) for live application.
+ * [GiphyQuotes](https://giphyquotes.herokuap.com) for live application.
